@@ -85,21 +85,21 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const renderContent = (collapsed: boolean, isDrawer = false) => {
     const navBtnClass = (tabKey: string) => `w-full flex items-center ${collapsed ? 'justify-center w-10 h-10 mx-auto px-0 py-0 gap-0' : 'gap-3 px-2.5 py-2'} rounded-xl text-[13px] font-semibold transition-all ${
       activeTab === tabKey
-        ? 'bg-[#2C1B2F] text-[#F3E9EC] border border-[#5E3A5C] shadow-sm font-bold'
-        : 'text-[#F3E9EC]/70 hover:bg-[#2C1B2F]/40 hover:text-[#F3E9EC]'
+        ? 'bg-[#D6CCA8] text-[#2B2520] shadow-sm font-bold sidebar-active-btn border border-[#2B2520]/20 [&_*]:!text-[#2B2520]'
+        : 'text-[#2B2520]/80 hover:bg-[#C2B095] hover:text-[#2B2520] [&_*]:text-[#2B2520]'
     }`;
 
     return (
-      <div className="flex flex-col h-full bg-[#0B0E1A] border-r border-[#5E3A5C]/40 select-none text-[#F3E9EC]">
+      <div className="flex flex-col h-full bg-[#B39F84] border-r border-[#2B2520]/15 select-none text-[#2B2520]">
         {/* Brand Header */}
-        <div className={`px-4 py-4 border-b border-[#5E3A5C]/40 bg-[#0B0E1A] flex items-center ${collapsed ? 'justify-center' : 'justify-between'}`}>
+        <div className={`px-4 py-4 border-b border-[#2B2520]/15 bg-[#B39F84] flex items-center ${collapsed ? 'justify-center' : 'justify-between'}`}>
           <Logo showText={!collapsed} subtitle={!collapsed} iconSize={36} />
 
           {/* Close button for mobile drawer */}
           {isDrawer && onCloseMobile && (
             <button
               onClick={onCloseMobile}
-              className="p-1.5 rounded-xl bg-[#2C1B2F] text-[#F3E9EC]/70 hover:text-[#F3E9EC] border border-[#5E3A5C] transition-colors"
+              className="p-1.5 rounded-xl bg-[#D6CCA8] text-[#2B2520] hover:text-black border border-[#2B2520]/20 transition-colors shadow-xs"
               title="Close Navigation"
             >
               <X className="w-5 h-5" />
@@ -110,7 +110,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           {!isDrawer && onToggleCollapse && !collapsed && (
             <button
               onClick={onToggleCollapse}
-              className="hidden lg:flex p-1.5 rounded-xl text-[#F3E9EC]/60 hover:text-[#F3E9EC] hover:bg-[#2C1B2F] transition-colors"
+              className="hidden lg:flex p-1.5 rounded-xl text-[#2B2520]/70 hover:text-black hover:bg-[#C2B095] transition-colors"
               title="Collapse Sidebar"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -121,29 +121,29 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* ACTIVE ROLE (Locked) */}
         {!collapsed ? (
           <div className="px-3.5 pt-3.5 pb-2.5">
-            <div className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl bg-[#2C1B2F] border border-[#5E3A5C] shadow-md">
+            <div className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl bg-[#D6CCA8] border border-[#2B2520]/20 shadow-sm">
               <div className="flex items-center gap-2.5 min-w-0">
                 {/* Green dot pulse */}
                 <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[10px] text-[#F3E9EC]/40 font-bold uppercase tracking-[1.5px]">Active Role</p>
-                  <p className="text-xs font-semibold text-[#F3E9EC] capitalize truncate">
+                  <p className="text-xs text-[#2B2520]/75 font-bold uppercase tracking-[1px]">Active Role</p>
+                  <p className="text-xs font-bold text-[#2B2520] capitalize truncate">
                     {currentRole === 'hod' ? 'HOD / Faculty' : currentRole === 'mentor' ? 'Industry Mentor' : currentRole === 'company' ? 'Recruiter' : 'Student Candidate'}
                   </p>
                 </div>
               </div>
               {/* Lock icon in circle */}
-              <div className="w-6 h-6 rounded-full bg-[#0B0E1A] flex items-center justify-center shrink-0 border border-[#5E3A5C]" title="Role is locked">
-                <Lock className="w-3.5 h-3.5 text-[#B47A9A]" />
+              <div className="w-6 h-6 rounded-full bg-[#B39F84] flex items-center justify-center shrink-0 border border-[#2B2520]/20" title="Role is locked">
+                <Lock className="w-3.5 h-3.5 text-[#2B2520]" />
               </div>
             </div>
           </div>
         ) : (
           <div className="py-3 flex justify-center">
-            <div className="w-8 h-8 rounded-lg bg-[#2C1B2F] border border-[#5E3A5C] flex items-center justify-center text-[#B47A9A]" title="Role is locked">
+            <div className="w-8 h-8 rounded-lg bg-[#D6CCA8] border border-[#2B2520]/20 flex items-center justify-center text-[#2B2520]" title="Role is locked">
               <Lock className="w-4 h-4" />
             </div>
           </div>
@@ -575,7 +575,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* User Profile Card & Sign Out */}
-        <div className="p-3.5 border-t border-[#5E3A5C]/40 bg-[#0B0E1A]">
+        <div className="p-3.5 border-t border-[#EEEBDA]/20 bg-[#282B4A]">
           {!collapsed ? (
             <div className="space-y-3">
               <div
@@ -583,17 +583,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenProfile();
                   if (onCloseMobile) onCloseMobile();
                 }}
-                className="flex items-center gap-3 p-2.5 rounded-xl bg-[#2C1B2F] border border-[#5E3A5C] hover:border-[#B47A9A] cursor-pointer transition-all group shadow-sm"
+                className="flex items-center gap-3 p-2.5 rounded-xl bg-[#D6CCA8] border border-[#2B2520]/20 hover:border-[#2B2520] cursor-pointer transition-all group shadow-sm"
               >
                 <div className="relative shrink-0">
                   {localStorage.getItem('profilePhoto') ? (
                     <img
                       src={localStorage.getItem('profilePhoto')!}
                       alt="Avatar"
-                      className="w-9 h-9 rounded-lg object-cover border border-[#5E3A5C] shadow"
+                      className="w-9 h-9 rounded-lg object-cover border border-[#2B2520]/20 shadow"
                     />
                   ) : (
-                    <div className="w-9 h-9 rounded-lg bg-[#0B0E1A] border border-[#5E3A5C] flex items-center justify-center font-bold text-[#B47A9A] text-xs shadow">
+                    <div className="w-9 h-9 rounded-lg bg-[#B39F84] border border-[#2B2520]/20 flex items-center justify-center font-bold text-[#2B2520] text-xs shadow">
                       {getInitials(
                         currentRole === 'hod'
                           ? 'Dr. Arvind Sharma'
@@ -605,10 +605,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       )}
                     </div>
                   )}
-                  <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 border-2 border-[#2C1B2F] rounded-full" />
+                  <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-600 border-2 border-[#D6CCA8] rounded-full" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold text-[#F3E9EC] truncate group-hover:text-[#B47A9A] transition-colors">
+                  <p className="text-xs font-bold text-[#2B2520] truncate group-hover:text-black transition-colors">
                     {currentRole === 'hod'
                       ? 'Dr. Arvind Sharma'
                       : currentRole === 'mentor'
@@ -617,7 +617,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       ? (localStorage.getItem('userName') || 'Corporate Recruiter')
                       : student?.name || localStorage.getItem('userName') || 'Adarsh Pratap'}
                   </p>
-                  <p className="text-[10px] text-[#F3E9EC]/50 truncate font-sans">
+                  <p className="text-xs text-[#2B2520]/80 truncate font-sans">
                     {currentRole === 'hod'
                       ? 'HOD • Dept of CSIT'
                       : currentRole === 'mentor'
@@ -635,20 +635,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     onOpenProfile();
                     if (onCloseMobile) onCloseMobile();
                   }}
-                  className="text-[#F3E9EC]/50 hover:text-[#F3E9EC] flex items-center gap-1.5 transition-colors font-medium"
+                  className="text-[#2B2520]/80 hover:text-black flex items-center gap-1.5 transition-colors font-medium"
                 >
-                  <UserIcon className="w-3.5 h-3.5 text-[#B47A9A]" />
+                  <UserIcon className="w-3.5 h-3.5 text-[#2B2520]" />
                   <span>Profile</span>
                 </button>
-                <span className="text-[#5E3A5C]">|</span>
+                <span className="text-[#2B2520]/30">|</span>
                 <button
                   onClick={() => {
                     onLogout();
                     if (onCloseMobile) onCloseMobile();
                   }}
-                  className="text-rose-400/80 hover:text-rose-400 flex items-center gap-1 transition-colors font-medium"
+                  className="text-rose-700 hover:text-rose-950 flex items-center gap-1 transition-colors font-medium"
                 >
-                  <LogOut className="w-3.5 h-3.5 text-rose-400/60" />
+                  <LogOut className="w-3.5 h-3.5 text-rose-700" />
                   <span>Sign Out</span>
                 </button>
               </div>
@@ -657,7 +657,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className="flex flex-col items-center gap-3 py-1">
               <button
                 onClick={onOpenProfile}
-                className="w-9 h-9 rounded-lg bg-[#2C1B2F] border border-[#5E3A5C] flex items-center justify-center font-bold text-[#B47A9A] text-xs shadow-md"
+                className="w-9 h-9 rounded-lg bg-[#D6CCA8] border border-[#2B2520]/20 flex items-center justify-center font-bold text-[#2B2520] text-xs shadow-md"
                 title="View Profile"
               >
                 {getInitials(
@@ -673,7 +673,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {onToggleCollapse && (
                 <button
                   onClick={onToggleCollapse}
-                  className="p-1 rounded-lg text-[#F3E9EC]/60 hover:text-[#F3E9EC] hover:bg-[#2C1B2F] transition-colors"
+                  className="p-1 rounded-lg text-[#2B2520]/70 hover:text-black hover:bg-[#C2B095] transition-colors"
                   title="Expand Sidebar"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -699,10 +699,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
           {/* Solid dark backdrop with smooth dismissal */}
           <div
             onClick={onCloseMobile}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
           />
           {/* Drawer container */}
-          <div className="fixed inset-y-0 left-0 w-72 max-w-[85vw] shadow-2xl z-10 flex flex-col h-full bg-[#070B20]">
+          <div className="fixed inset-y-0 left-0 w-72 max-w-[85vw] shadow-2xl z-10 flex flex-col h-full bg-[#B39F84]">
             {renderContent(false, true)}
           </div>
         </div>

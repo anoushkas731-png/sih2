@@ -42,7 +42,7 @@ export const Logo: React.FC<LogoProps> = ({
       
       {/* Official Ladder Logo: Isometric AS Monogram */}
       <div 
-        className="relative shrink-0 flex items-center justify-center bg-[#2C1B2F] p-1.5 rounded-[10px] border border-[#5E3A5C] logo-container"
+        className="relative shrink-0 flex items-center justify-center bg-[#D6CCA8] p-1.5 rounded-[10px] border border-[#2B2520]/20 logo-container shadow-xs"
         style={{ width: iconSize, height: iconSize }}
       >
         <svg 
@@ -54,25 +54,25 @@ export const Logo: React.FC<LogoProps> = ({
           className="shrink-0"
         >
           {/* Isometric A - Simplified block shapes */}
-          <path className="part-a" d="M15 35 L22 10 L29 35 Z" fill="#B47A9A" />
+          <path className="part-a" d="M15 35 L22 10 L29 35 Z" fill="#2B2520" />
           {/* Isometric S - Simplified block shapes */}
-          <path className="part-s" d="M35 15 L25 15 L25 25 L35 25 L35 35 L20 35 Z" fill="#F3E9EC" />
+          <path className="part-s" d="M35 15 L25 15 L25 25 L35 25 L35 35 L20 35 Z" fill="#6B6056" />
         </svg>
       </div>
 
       {showText && (
         <div className="flex flex-col min-w-0 flex-1">
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className={`text-[18px] font-bold font-sans leading-tight ${lightBg ? "text-[#00030E]" : "text-[#F3E9EC]"}`}>
+            <span className="text-[18px] font-bold font-sans leading-tight text-[#2B2520]">
               Ladder
             </span>
           </div>
 
           {subtitle && (
-            <div className="mt-1 max-w-[180px] leading-[1.3] truncate whitespace-normal">
-              <span className="text-[11px] font-semibold text-[#F3E9EC]/70 tracking-[0.2px]">Empowering Talent,</span>
+            <div className="mt-1 max-w-[200px] leading-[1.35] whitespace-normal">
+              <span className="text-xs font-semibold text-[#2B2520]/85 tracking-[0.2px]">Empowering Talent,</span>
               <br />
-              <span className="text-[11px] font-semibold text-[#F3E9EC]/50 tracking-[0.2px]">Bridging Academia & Industry</span>
+              <span className="text-xs font-semibold text-[#2B2520]/75 tracking-[0.2px]">Bridging Academia & Industry</span>
             </div>
           )}
         </div>

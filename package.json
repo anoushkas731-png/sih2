@@ -5,7 +5,7 @@
   "main": "backend/server.js",
   "scripts": {
     "dev": "vite --config frontend/vite.config.ts",
-    "build": "vite build --config frontend/vite.config.ts",
+    "build": "vite build --config frontend/vite.config.ts && node -e \"const fs=require('fs'); if(fs.existsSync('frontend/dist')) fs.cpSync('frontend/dist', 'dist', {recursive: true});\"",
     "start": "node backend/server.js",
     "lint": "node -e 'console.log(\"Lint passed\")'"
   },

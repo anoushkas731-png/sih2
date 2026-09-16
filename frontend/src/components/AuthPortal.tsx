@@ -303,10 +303,10 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 font-sans select-none animate-in fade-in duration-200">
-      <div className="relative w-full max-w-xl bg-[#0B0E1A] border border-[#5E3A5C]/40 rounded-2xl shadow-2xl overflow-hidden text-[#F3E9EC] my-8">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 font-sans select-none animate-in fade-in duration-200">
+      <div className="relative w-full max-w-xl bg-[#EEEBDA] border border-[#282B4A]/30 rounded-2xl shadow-2xl overflow-hidden text-[#282B4A] my-8">
         {/* Header Ribbon & Close Button */}
-        <div className="px-4 py-4 border-b border-[#5E3A5C]/30 flex items-start justify-between bg-[#0B0E1A]">
+        <div className="px-4 py-4 border-b border-[#1E2038] flex items-start justify-between bg-[#282B4A] text-[#EEEBDA]">
           <Logo 
             showText={true} 
             subtitle={true} 
@@ -314,7 +314,7 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
           />
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-[#2C1B2F] border border-[#5E3A5C] hover:border-[#B47A9A] text-[#F3E9EC]/60 hover:text-[#F3E9EC] transition-colors cursor-pointer"
+            className="p-2 rounded-xl bg-[#1E2038] border border-[#EEEBDA]/25 hover:border-[#EEEBDA] text-[#EEEBDA] hover:text-white transition-colors cursor-pointer"
             title="Close Portal"
           >
             <X className="w-4 h-4" />
@@ -322,16 +322,16 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
         </div>
 
         {/* Dual Switchers: 1. Mode Toggle [Sign In] [Register] + 2. Role Tabs [Student][Mentor][HOD][Recruiter] */}
-        <div className="px-6 pt-4 pb-2 space-y-3 bg-[#0B0E1A]">
+        <div className="px-6 pt-4 pb-2 space-y-3 bg-[#EEEBDA]">
           {/* Mode Toggle [Sign In] [Register Student / User] */}
-          <div className="flex items-center p-1 bg-[#2C1B2F] rounded-xl border border-[#5E3A5C]">
+          <div className="flex items-center p-1 bg-[#E4E0CE] rounded-xl border border-[#282B4A]/20">
             <button
               type="button"
               onClick={() => setAuthMode('login')}
               className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer ${
                 authMode === 'login'
-                  ? 'bg-[#5E3A5C] text-[#F3E9EC] shadow-md border border-[#B47A9A]'
-                  : 'text-[#F3E9EC]/60 hover:text-[#F3E9EC]'
+                  ? 'bg-[#282B4A] text-[#EEEBDA] shadow-md border border-[#1E2038]'
+                  : 'text-[#282B4A] hover:text-black'
               }`}
             >
               Sign In
@@ -341,8 +341,8 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
               onClick={() => setAuthMode('register')}
               className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer ${
                 authMode === 'register'
-                  ? 'bg-[#5E3A5C] text-[#F3E9EC] shadow-md border border-[#B47A9A]'
-                  : 'text-[#F3E9EC]/60 hover:text-[#F3E9EC]'
+                  ? 'bg-[#282B4A] text-[#EEEBDA] shadow-md border border-[#1E2038]'
+                  : 'text-[#282B4A] hover:text-black'
               }`}
             >
               Register Student / User
@@ -350,14 +350,14 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
           </div>
 
           {/* Role Tabs [Student] [Mentor] [HOD] [Recruiter] - Student Default */}
-          <div className="grid grid-cols-4 gap-1.5 p-1 bg-[#2C1B2F]/80 rounded-xl border border-[#5E3A5C]">
+          <div className="grid grid-cols-4 gap-1.5 p-1 bg-[#E4E0CE] rounded-xl border border-[#282B4A]/20">
             <button
               type="button"
               onClick={() => setRoleTab('Student')}
               className={`flex items-center justify-center gap-1.5 py-2 px-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                 roleTab === 'Student'
-                  ? 'bg-[#5E3A5C] text-[#F3E9EC] border border-[#B47A9A]'
-                  : 'text-[#F3E9EC]/60 hover:text-[#F3E9EC]'
+                  ? 'bg-[#282B4A] text-[#EEEBDA] border border-[#1E2038]'
+                  : 'text-[#282B4A] hover:text-black'
               }`}
             >
               <GraduationCap className="w-3.5 h-3.5" />
@@ -369,8 +369,8 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
               onClick={() => setRoleTab('Mentor')}
               className={`flex items-center justify-center gap-1.5 py-2 px-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                 roleTab === 'Mentor'
-                  ? 'bg-[#5E3A5C] text-[#F3E9EC] border border-[#B47A9A]'
-                  : 'text-[#F3E9EC]/60 hover:text-[#F3E9EC]'
+                  ? 'bg-[#282B4A] text-[#EEEBDA] border border-[#1E2038]'
+                  : 'text-[#282B4A] hover:text-black'
               }`}
             >
               <Users className="w-3.5 h-3.5" />
@@ -382,8 +382,8 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
               onClick={() => setRoleTab('HOD')}
               className={`flex items-center justify-center gap-1.5 py-2 px-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                 roleTab === 'HOD'
-                  ? 'bg-[#5E3A5C] text-[#F3E9EC] border border-[#B47A9A]'
-                  : 'text-[#F3E9EC]/60 hover:text-[#F3E9EC]'
+                  ? 'bg-[#282B4A] text-[#EEEBDA] border border-[#1E2038]'
+                  : 'text-[#282B4A] hover:text-black'
               }`}
             >
               <Building2 className="w-3.5 h-3.5" />
@@ -395,8 +395,8 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
               onClick={() => setRoleTab('Recruiter')}
               className={`flex items-center justify-center gap-1.5 py-2 px-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                 roleTab === 'Recruiter'
-                  ? 'bg-[#5E3A5C] text-[#F3E9EC] border border-[#B47A9A]'
-                  : 'text-[#F3E9EC]/60 hover:text-[#F3E9EC]'
+                  ? 'bg-[#282B4A] text-[#EEEBDA] border border-[#1E2038]'
+                  : 'text-[#282B4A] hover:text-black'
               }`}
             >
               <Briefcase className="w-3.5 h-3.5" />
@@ -406,7 +406,7 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
         </div>
 
         {/* Form Container */}
-        <form onSubmit={handleAuth} className="p-6 space-y-4 max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/10">
+        <form onSubmit={handleAuth} className="p-6 space-y-4 max-h-[60vh] overflow-y-auto scrollbar-thin">
           
           {/* PHOTO UPLOAD & PREVIEW (Available in Register and Login) */}
           <div className="flex flex-col items-center justify-center pb-2">
@@ -419,7 +419,7 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
             />
             <label
               htmlFor="photoUpload"
-              className="w-20 h-20 rounded-full border-2 border-dashed border-[#5E3A5C] bg-[#2C1B2F] hover:border-[#B47A9A] hover:bg-[#5E3A5C]/20 flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all relative group"
+              className="w-20 h-20 rounded-full border-2 border-dashed border-[#282B4A]/40 bg-[#E4E0CE] hover:border-[#282B4A] hover:bg-[#EEEBDA] flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all relative group"
               title="Upload Profile Photo"
             >
               {photoPreview ? (
@@ -430,15 +430,15 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
                 />
               ) : (
                 <div className="flex flex-col items-center justify-center text-center p-1">
-                  <Camera className="w-5 h-5 text-[#B47A9A] group-hover:text-[#F3E9EC] transition-colors" />
-                  <span className="text-[9px] text-[#F3E9EC]/50 group-hover:text-[#F3E9EC] mt-1">Photo</span>
+                  <Camera className="w-5 h-5 text-[#282B4A] group-hover:text-black transition-colors" />
+                  <span className="text-[9px] text-[#282B4A] group-hover:text-black mt-1">Photo</span>
                 </div>
               )}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
                 <Camera className="w-4 h-4 text-white" />
               </div>
             </label>
-            <span className="text-[10px] text-[#F3E9EC]/50 mt-1.5">
+            <span className="text-[10px] text-[#282B4A]/80 mt-1.5">
               Click circle to upload profile photo (PNG, JPG, WebP)
             </span>
           </div>
@@ -900,7 +900,7 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3 px-4 rounded-xl bg-[#5E3A5C] hover:bg-[#B47A9A] text-[#F3E9EC] font-bold text-xs tracking-wide transition-all shadow-lg shadow-[#2C1B2F]/50 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full py-3 px-4 rounded-xl bg-[#282B4A] hover:bg-[#1E2038] text-[#EEEBDA] font-bold text-xs tracking-wide transition-all shadow-md shadow-[#282B4A]/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isSubmitting ? (
                 <>

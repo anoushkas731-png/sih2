@@ -131,23 +131,23 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
           </div>
 
           {/* READINESS GAUGES */}
-          <div className="grid grid-cols-2 gap-3.5 w-full lg:w-auto lg:min-w-[280px] min-w-0">
+          <div className="grid grid-cols-2 gap-3.5 w-full lg:w-auto lg:min-w-[320px] min-w-0">
             <div className="p-4 rounded-xl bg-[#0B1033] border border-[#1E2B68] text-center flex flex-col justify-center shadow-md">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Industry Readiness</span>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Industry Readiness</span>
               <div className="text-3xl font-black text-emerald-400 my-1">{industryReadiness}%</div>
               <div className="w-full bg-[#182352] h-1.5 rounded-full overflow-hidden">
                 <div className="bg-emerald-500 h-full rounded-full transition-all duration-500" style={{ width: `${industryReadiness}%` }}></div>
               </div>
-              <span className="text-[9.5px] text-emerald-300/80 font-medium mt-1">Tier-1 Qualified</span>
+              <span className="text-xs text-emerald-300 font-medium mt-1.5">Tier-1 Qualified</span>
             </div>
 
             <div className="p-4 rounded-xl bg-[#0B1033] border border-[#1E2B68] text-center flex flex-col justify-center shadow-md">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Overall Skill DNA</span>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Overall Skill DNA</span>
               <div className="text-3xl font-black text-[#A78BFA] my-1">{overallScore}%</div>
               <div className="w-full bg-[#182352] h-1.5 rounded-full overflow-hidden">
                 <div className="bg-gradient-to-r from-[#7C5CFC] to-[#6366F1] h-full rounded-full transition-all duration-500" style={{ width: `${overallScore}%` }}></div>
               </div>
-              <span className="text-[9.5px] text-purple-300/80 font-medium mt-1">{skills.length} Verified Competencies</span>
+              <span className="text-xs text-purple-300 font-medium mt-1.5">{skills.length} Verified Competencies</span>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                 </div>
                 <div>
                   <h2 className="text-sm font-bold text-white">Skill Readiness Overview</h2>
-                  <p className="text-[11px] text-slate-400">Diagnostic benchmark against industry standards</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Diagnostic benchmark against industry standards</p>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                 </div>
                 <div>
                   <h2 className="text-sm font-bold text-white">Skill Gap Summary</h2>
-                  <p className="text-[11px] text-slate-400">Target Role: {student?.targetRole || 'Full-Stack Software Engineer (Tier-1)'}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Target Role: {student?.targetRole || 'Full-Stack Software Engineer (Tier-1)'}</p>
                 </div>
               </div>
 
@@ -277,7 +277,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-white truncate">{gap.skill}</span>
-                      <span className={`text-[9px] font-extrabold px-1.5 py-0.5 rounded ${
+                      <span className={`text-[11px] font-bold px-2 py-0.5 rounded ${
                         gap.gapStatus === 'Critical Gap' 
                           ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30' 
                           : gap.gapStatus === 'Moderate Gap'
@@ -322,7 +322,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             </div>
             <div>
               <h2 className="text-sm font-bold text-white">Recommended Opportunities for You</h2>
-              <p className="text-[11px] text-slate-400">Deterministic algorithmic match based on your verified skills</p>
+              <p className="text-xs text-slate-400 mt-0.5">Deterministic algorithmic match based on your verified skills</p>
             </div>
           </div>
 
@@ -425,7 +425,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <h3 className="text-xs font-extrabold text-white uppercase tracking-wider">AI Recommended Next Actions</h3>
+            <h2 className="text-sm font-bold text-white tracking-normal">AI Recommended Next Actions</h2>
           </div>
           <span className="text-[10px] font-bold text-slate-400">Target Gap: AWS Cloud Architecture</span>
         </div>
@@ -499,8 +499,8 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                 >
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-bold text-slate-400">{gig.company}</span>
-                      <span className="text-[9px] bg-indigo-500/20 text-[#C4B5FD] px-1.5 py-0.5 rounded font-bold">{gig.skill}</span>
+                      <span className="text-xs font-bold text-slate-400">{gig.company}</span>
+                      <span className="text-[11px] bg-indigo-500/20 text-[#C4B5FD] px-2 py-0.5 rounded font-bold">{gig.skill}</span>
                     </div>
                     <p className="text-xs font-bold text-white truncate">{gig.title}</p>
                     <p className="text-[11px] text-emerald-400 font-extrabold mt-1">₹{gig.payment} · {gig.hours} Hours</p>

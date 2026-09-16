@@ -1369,7 +1369,12 @@ async function deleteJob(id) {
 async function query(text, params) {
   const pool = getPgPool();
   if (pool) {
-    return pool.query(text, params);
+    try {
+      return await pool.query(text, params);
+    } catch (err) {
+      console.warn("PostgreSQL query failed, fallback to empty rows:", err.message);
+      return { rows: [] };
+    }
   }
   return { rows: [] };
 }

@@ -342,7 +342,7 @@ export const App: React.FC = () => {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <div className={`flex h-screen ${theme === 'light' ? 'bg-[#F8FAFC] text-slate-900' : 'bg-[#070B1E] text-slate-100'} overflow-hidden font-sans antialiased selection:bg-[#7C5CFC]/30`}>
+    <div className="flex h-screen bg-[#B39F84] text-[#2B2520] overflow-hidden font-sans antialiased selection:bg-[#D6CCA8]">
       {/* Splash Screen on Registration / Login Launch */}
       {splashData.isOpen && (
         <DashboardSplash

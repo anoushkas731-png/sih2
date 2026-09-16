@@ -193,7 +193,7 @@ export const SkillTwinAndQuests: React.FC = () => {
             </div>
           </div>
           <div className="min-w-0">
-            <h3 className="text-white font-bold text-base truncate">{getDisplayName(user.name)}</h3>
+            <h2 className="text-white font-bold text-base truncate">{getDisplayName(user.name)}</h2>
             <p className="text-white/50 text-xs mt-0.5 mb-1.5 truncate">{user.batch}</p>
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-bold text-[#00D9FF] uppercase tracking-wider bg-[#00D9FF]/10 px-2 py-0.5 rounded-sm whitespace-nowrap">
@@ -241,10 +241,10 @@ export const SkillTwinAndQuests: React.FC = () => {
       {/* Component 2: Daily Quest */}
       <div className="bg-[#12162E] border border-white/10 rounded-[20px] p-5 flex flex-col">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-white font-bold text-sm flex items-center gap-2">
+          <h2 className="text-white font-bold text-sm flex items-center gap-2">
             <Target className="w-4 h-4 text-[#00D9FF]" />
             Daily Quests
-          </h3>
+          </h2>
           <div className="flex items-center gap-3">
             <div className="flex gap-1">
               {[...Array(7)].map((_, i) => (

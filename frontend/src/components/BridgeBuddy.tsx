@@ -218,35 +218,35 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.95 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="w-80 sm:w-[420px] h-[520px] bg-[#0B0E1A] border border-[#5E3A5C] rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 select-none text-[#F3E9EC]"
+            className="w-80 sm:w-[420px] h-[520px] bg-[#EEEBDA] border border-[#282B4A]/30 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 select-none text-[#282B4A]"
           >
             {/* Header */}
-            <div className="p-3.5 bg-[#0B0E1A] border-b border-[#5E3A5C] flex items-center justify-between">
+            <div className="p-3.5 bg-[#282B4A] border-b border-[#1E2038] flex items-center justify-between text-[#EEEBDA]">
               <div className="flex items-center gap-2.5">
                 <div className="relative">
-                  <div className="w-9 h-9 rounded-xl bg-[#5E3A5C] border border-[#B47A9A] flex items-center justify-center text-[#F3E9EC] shadow-md">
-                    <Sparkles className="w-5 h-5 text-[#B47A9A]" />
+                  <div className="w-9 h-9 rounded-xl bg-[#1E2038] border border-[#EEEBDA]/30 flex items-center justify-center text-[#EEEBDA] shadow-md">
+                    <Sparkles className="w-5 h-5 text-[#EEEBDA]" />
                   </div>
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#B47A9A] border-2 border-[#0B0E1A] rounded-full animate-pulse" />
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-[#282B4A] rounded-full animate-pulse" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h4 className="text-xs font-extrabold text-[#F3E9EC]">Bridge Buddy</h4>
-                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-[#5E3A5C]/40 text-[#B47A9A] border border-[#5E3A5C] uppercase tracking-wide flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-[#B47A9A] rounded-full animate-pulse"></span>AI HELP DESK</span>
+                    <h4 className="text-xs font-bold text-[#EEEBDA]">Bridge Buddy</h4>
+                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-[#1E2038] text-[#EEEBDA] border border-[#EEEBDA]/20 uppercase tracking-wide flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>AI HELP DESK</span>
                   </div>
-                  <p className="text-[10px] text-[#F3E9EC]/60">24/7 Technical Advisor • Online</p>
+                  <p className="text-[10px] text-[#EEEBDA]/70">24/7 Technical Advisor • Online</p>
                 </div>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-lg bg-[#2C1B2F] hover:bg-[#5E3A5C] border border-[#5E3A5C] text-[#F3E9EC]/60 hover:text-[#F3E9EC] transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg bg-[#1E2038] hover:bg-[#282B4A] border border-[#EEEBDA]/20 text-[#EEEBDA]/80 hover:text-white transition-colors cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Chat Body */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#00030E]">
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#FAF8F0]">
               {messages.map((msg, idx) => (
                 <div 
                   key={idx}
@@ -254,47 +254,47 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
                 >
                   <div className={`w-6 h-6 rounded-lg flex items-center justify-center font-bold text-[10px] shrink-0 mt-1 ${
                     msg.sender === 'user' 
-                      ? 'bg-[#5E3A5C] text-[#F3E9EC]' 
-                      : 'bg-[#2C1B2F] border border-[#5E3A5C] text-[#B47A9A]'
+                      ? 'bg-[#282B4A] text-[#EEEBDA]' 
+                      : 'bg-[#E4E0CE] border border-[#282B4A]/20 text-[#282B4A]'
                   }`}>
                     {msg.sender === 'user' ? <User className="w-3.5 h-3.5" /> : <Bot className="w-3.5 h-3.5" />}
                   </div>
                   <div className={`p-3 rounded-xl text-xs leading-relaxed relative group ${
                     msg.sender === 'user'
-                      ? 'bg-[#5E3A5C] text-[#F3E9EC] rounded-tr-none'
-                      : 'bg-[#2C1B2F] border border-[#5E3A5C] text-[#F3E9EC] rounded-tl-none'
+                      ? 'bg-[#282B4A] text-[#EEEBDA] rounded-tr-none'
+                      : 'bg-[#EEEBDA] border border-[#282B4A]/20 text-[#282B4A] rounded-tl-none shadow-sm'
                   }`}>
                     {msg.sender === 'ai' ? (
-                      <div className="space-y-2 text-[#F3E9EC] text-xs">
+                      <div className="space-y-2 text-[#282B4A] text-xs">
                         <ReactMarkdown
                           components={{
                             p: ({ children }) => <div className="mb-1.5 last:mb-0 leading-relaxed">{children}</div>,
                             pre: ({ children }) => <>{children}</>,
-                            strong: ({ children }) => <strong className="font-bold text-[#F3E9EC]">{children}</strong>,
-                            h3: ({ children }) => <h3 className="font-bold text-sm text-[#B47A9A] mt-2 mb-1">{children}</h3>,
-                            h4: ({ children }) => <h4 className="font-bold text-xs text-[#B47A9A] mt-2 mb-1">{children}</h4>,
+                            strong: ({ children }) => <strong className="font-bold text-[#282B4A]">{children}</strong>,
+                            h3: ({ children }) => <h3 className="font-bold text-sm text-[#282B4A] mt-2 mb-1">{children}</h3>,
+                            h4: ({ children }) => <h4 className="font-bold text-xs text-[#282B4A] mt-2 mb-1">{children}</h4>,
                             ul: ({ children }) => <ul className="list-disc pl-4 space-y-1 my-1.5">{children}</ul>,
                             ol: ({ children }) => <ol className="list-decimal pl-4 space-y-1 my-1.5">{children}</ol>,
-                            li: ({ children }) => <li className="text-[#F3E9EC]/80">{children}</li>,
+                            li: ({ children }) => <li className="text-[#282B4A]/80">{children}</li>,
                             code: ({ inline, className, children, ...props }: any) => {
                               return inline ? (
-                                <code className="bg-[#0B0E1A] text-[#B47A9A] px-1 py-0.5 rounded text-[11px] font-mono border border-[#5E3A5C]">
+                                <code className="bg-[#E4E0CE] text-[#282B4A] px-1 py-0.5 rounded text-[11px] font-mono border border-[#282B4A]/20">
                                   {children}
                                 </code>
                               ) : (
-                                <div className="my-2 rounded-lg overflow-hidden border border-[#5E3A5C] bg-[#00030E]">
-                                  <div className="px-3 py-1 bg-[#0B0E1A] border-b border-[#5E3A5C] flex items-center justify-between text-[10px] text-[#F3E9EC]/60 font-mono">
+                                <div className="my-2 rounded-lg overflow-hidden border border-[#282B4A]/20 bg-[#1E2038]">
+                                  <div className="px-3 py-1 bg-[#282B4A] border-b border-[#1E2038] flex items-center justify-between text-[10px] text-[#EEEBDA]/70 font-mono">
                                     <span>Code Solution</span>
                                     <button 
                                       type="button"
                                       onClick={() => handleCopy(String(children).replace(/\n$/, ''), idx)}
-                                      className="flex items-center gap-1 hover:text-[#F3E9EC] transition-colors cursor-pointer text-[10px]"
+                                      className="flex items-center gap-1 hover:text-white transition-colors cursor-pointer text-[10px]"
                                     >
-                                      {copiedIndex === idx ? <Check className="w-3 h-3 text-[#B47A9A]" /> : <Copy className="w-3 h-3" />}
+                                      {copiedIndex === idx ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                                       {copiedIndex === idx ? 'Copied' : 'Copy'}
                                     </button>
                                   </div>
-                                  <pre className="p-2.5 text-[11px] font-mono text-[#F3E9EC] overflow-x-auto">
+                                  <pre className="p-2.5 text-[11px] font-mono text-[#EEEBDA] overflow-x-auto">
                                     <code>{children}</code>
                                   </pre>
                                 </div>
@@ -308,20 +308,20 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
                     ) : (
                       <p className="whitespace-pre-line">{msg.text}</p>
                     )}
-                    <span className="text-[8.5px] text-[#F3E9EC]/50 block mt-1 font-mono text-right">{msg.time}</span>
+                    <span className={`text-[8.5px] block mt-1 font-mono text-right ${msg.sender === 'user' ? 'text-[#EEEBDA]/70' : 'text-[#282B4A]/50'}`}>{msg.time}</span>
                   </div>
                 </div>
               ))}
 
               {isTyping && (
                 <div className="flex gap-2 max-w-[80%] mr-auto">
-                  <div className="w-6 h-6 rounded-lg bg-[#5E3A5C] text-[#F3E9EC] flex items-center justify-center shrink-0 mt-1">
+                  <div className="w-6 h-6 rounded-lg bg-[#282B4A] text-[#EEEBDA] flex items-center justify-center shrink-0 mt-1">
                     <Bot className="w-3.5 h-3.5" />
                   </div>
-                  <div className="p-3 rounded-xl bg-[#2C1B2F] border border-[#5E3A5C] flex items-center gap-1.5 h-9">
-                    <span className="w-2 h-2 bg-[#B47A9A] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <span className="w-2 h-2 bg-[#B47A9A] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <span className="w-2 h-2 bg-[#B47A9A] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <div className="p-3 rounded-xl bg-[#EEEBDA] border border-[#282B4A]/20 flex items-center gap-1.5 h-9">
+                    <span className="w-2 h-2 bg-[#282B4A] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-2 h-2 bg-[#282B4A] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-2 h-2 bg-[#282B4A] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                 </div>
               )}
@@ -329,7 +329,7 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
             </div>
 
             {/* Dynamic Suggestion Chips */}
-            <div className="p-2 bg-[#0B0E1A] border-t border-[#5E3A5C] flex gap-1.5 overflow-x-auto scrollbar-none shrink-0">
+            <div className="p-2 bg-[#E4E0CE] border-t border-[#282B4A]/15 flex gap-1.5 overflow-x-auto scrollbar-none shrink-0">
               {[
                 { label: 'Clarify JWT Blacklist', query: 'Clarify JWT middleware token blacklisting' },
                 { label: 'Optimize SQL Pool', query: 'Optimize PostgreSQL indexing' },
@@ -340,7 +340,7 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
                 <button
                   key={i}
                   onClick={() => handleSuggestionClick(chip.query)}
-                  className="text-[10px] font-semibold bg-[#2C1B2F] hover:bg-[#5E3A5C] text-[#F3E9EC] px-2.5 py-1 rounded-lg border border-[#5E3A5C] shrink-0 transition-all cursor-pointer whitespace-nowrap"
+                  className="text-[10px] font-semibold bg-[#EEEBDA] hover:bg-[#282B4A] hover:text-[#EEEBDA] text-[#282B4A] px-2.5 py-1 rounded-lg border border-[#282B4A]/20 shrink-0 transition-all cursor-pointer whitespace-nowrap"
                 >
                   {chip.label}
                 </button>
@@ -348,18 +348,18 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
             </div>
 
             {/* Input Footer */}
-            <div className="p-3 bg-[#0B0E1A] border-t border-[#5E3A5C] flex items-center gap-2">
+            <div className="p-3 bg-[#EEEBDA] border-t border-[#282B4A]/20 flex items-center gap-2">
               <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder={`Ask Bridge Buddy anything (code, gigs, tech), ${getFirstName()}...`}
-                className="flex-1 bg-[#2C1B2F] border border-[#5E3A5C] focus:border-[#B47A9A] text-[#F3E9EC] placeholder-[#F3E9EC]/40 text-xs rounded-xl px-3 py-2 outline-none transition-all"
+                placeholder={`Ask Bridge Buddy anything, ${getFirstName()}...`}
+                className="flex-1 bg-[#FAF8F0] border border-[#282B4A]/30 focus:border-[#282B4A] text-[#282B4A] placeholder-[#282B4A]/50 text-xs rounded-xl px-3 py-2 outline-none transition-all"
               />
               <button
                 onClick={() => handleSend()}
-                className="p-2 rounded-xl bg-[#5E3A5C] hover:bg-[#B47A9A] text-[#F3E9EC] shadow-md transition-colors shrink-0 cursor-pointer"
+                className="p-2 rounded-xl bg-[#282B4A] hover:bg-[#1E2038] text-[#EEEBDA] shadow-md transition-colors shrink-0 cursor-pointer"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -374,7 +374,7 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-[#5E3A5C] hover:bg-[#B47A9A] border border-[#B47A9A]/40 text-[#F3E9EC] flex items-center justify-center shadow-2xl relative cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[#5E3A5C]/30"
+        className="w-14 h-14 rounded-full bg-[#282B4A] hover:bg-[#1E2038] border border-[#EEEBDA]/40 text-[#EEEBDA] flex items-center justify-center shadow-2xl relative cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[#282B4A]/30"
         title="Chat with Bridge Buddy (AI Help Desk)"
       >
         <AnimatePresence mode="wait">
@@ -405,7 +405,7 @@ export const BridgeBuddy: React.FC<BridgeBuddyProps> = ({ student, currentRole }
 
         {/* Small notifications dot */}
         {!isOpen && (
-          <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-rose-500 rounded-full border-2 border-[#070B1E] flex items-center justify-center">
+          <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-rose-500 rounded-full border-2 border-[#282B4A] flex items-center justify-center">
             <span className="w-1.5 h-1.5 bg-white rounded-full animate-ping" />
           </span>
         )}
